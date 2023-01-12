@@ -80,8 +80,8 @@ analytics:
 
 # Site Author
 author:
-  avatar           : "profile.png"
   name             : "Victor Taillieu"
+  avatar           : "profile.jpeg"
   bio              : "Working at Decathlon Canada in computer vision"
   location         : "Fontainebleau, France"
   employer         :
