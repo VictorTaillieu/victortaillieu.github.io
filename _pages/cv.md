@@ -9,6 +9,10 @@ redirect_from:
 
 {% include base_path %}
 
+[View pdf resume in french](/files/resume_fr.pdf)
+
+[View pdf resume in english](/files/resume_en.pdf)
+
 ## Work experience
 
 * **Developer in artificial intelligence (internship)**, [Decathlon](https://www.decathlon.com/) (Montreal, Canada), *May 2022 - November 2022*
