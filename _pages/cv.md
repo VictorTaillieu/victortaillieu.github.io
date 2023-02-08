@@ -49,7 +49,7 @@ redirect_from:
 
 ## Academic projects
 
-* **Image captioning project**, Université de Sherbrooke, *January 2022 - April 2022*
+* [**Image captioning project**](https://github.com/eliottthomas99/Projet_RN), Université de Sherbrooke, *January 2022 - April 2022*
   * Image captioning using recurrent and convolutional neural networks (Python, PyTorch)
 * **Innovation project**, EFREI Paris, *October 2020 - April 2021*
   * Agile project in team of 8 followed by certified coaches
