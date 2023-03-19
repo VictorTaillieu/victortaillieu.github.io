@@ -39,6 +39,12 @@ redirect_from:
   * System programming (C, Linux)
   * Implementation of an interpreter (Scala)
 
+## Certifications
+
+* [**Convolutional Neural Networks**](https://www.coursera.org/account/accomplishments/certificate/7SG28W2LCMX5), Coursera, April 2022
+* [**Neural Networks and Deep Learning**](https://www.coursera.org/account/accomplishments/certificate/8QEUYEHDC2MP), Coursera, February 2022
+* [**AZ-900: Microsoft Azure Fundamentals**](https://www.credly.com/badges/0b2ef27b-8bc3-4cdb-bc40-1c73d095fa7e), Microsoft, April 2021
+
 ## Skills
 
 * **Programming**: Python, R, Scala, Java, C/C++, LaTeX
