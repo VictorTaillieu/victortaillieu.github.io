@@ -37,6 +37,7 @@ redirect_from:
 * **Master's degree in computer science**, [Université de Sherbrooke](https://www.usherbrooke.ca/about/) (Canada), *August 2021 - April 2022*
   * Double-degree
   * Artificial intelligence and data science program
+  * [Faculty of Science Graduate Honors List 2023](/files/TaillieuV_Lettre_recipiendaire_2023.pdf)
 * **Semester of study abroad**, [KAIST](https://www.kaist.ac.kr/en/) (Daejeon, South Korea), *August 2019 - December 2019*
   * Software engineering (Java, UML)
   * System programming (C, Linux)
