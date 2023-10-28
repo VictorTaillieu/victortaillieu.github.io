@@ -15,6 +15,9 @@ redirect_from:
 
 ## Work experience
 
+* **Software support engineer for [Thales](https://www.thalesgroup.com/en)**, [Alten](https://www.alten.com/) (Massy, France), *October 2023 - Today*
+  * Build tools for Thales developers (Linux, Jira)
+
 * **Developer in artificial intelligence (internship)**, [Decathlon](https://www.decathlon.com/) (Montreal, Canada), *May 2022 - November 2022*
   * Recognize product brands by deep learning (Python, TensorFlow)
 
