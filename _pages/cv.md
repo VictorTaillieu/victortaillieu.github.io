@@ -20,6 +20,7 @@ redirect_from:
 
 * **Developer in artificial intelligence (internship)**, [Decathlon](https://www.decathlon.com/) (Montreal, Canada), *May 2022 - November 2022*
   * Recognize product brands by deep learning (Python, TensorFlow)
+  * [Letter of recommendation](/files/reco_Decathlon.pdf)
 
 * **Data storage engineer (internship)**, [Sencrop](https://sencrop.com/) (Lille, France), *April 2021 - August 2021*
   * Search for "big data" storage technologies (PostGIS, GeoWave)
