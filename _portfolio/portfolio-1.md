@@ -1,7 +1,14 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Chess openings statistics"
+excerpt: "Web app to explore chess openings statistics <br/><img src='/images/chess-openings.png' width='500'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+## Description
+
+This project is an interactive web application that allows users to explore statistics about popular chess openings presented on [Hanging Pawns](https://www.youtube.com/@HangingPawns/playlists) YouTube channel. The [Lichess opening explorer](https://lichess.org/analysis#explorer) statistics are obtained from the [Lichess API](https://lichess.org/api). The application is written in [Python](https://www.python.org/) using the [Dash](https://dash.plotly.com/) framework.
+
+## Links
+
+- [Source code](https://github.com/VictorTaillieu/chess-openings)
+- [Web app](https://chess-openings.onrender.com/) (The page may take up to a minute to load)
