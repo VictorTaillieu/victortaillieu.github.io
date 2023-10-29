@@ -11,4 +11,4 @@ This project is an interactive web application that allows users to explore stat
 ## Links
 
 - [Source code](https://github.com/VictorTaillieu/chess-openings)
-- [Web app](https://chess-openings.onrender.com/)
+- [Web app](https://chess-openings.onrender.com/) (The page may take up to a minute to load)
