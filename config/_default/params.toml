@@ -11,7 +11,7 @@ autoSwitchAppearance = true
 
 enableA11y = false
 enableSearch = true
-enableCodeCopy = false
+enableCodeCopy = true
 
 replyByEmail = false
 
@@ -19,16 +19,16 @@ replyByEmail = false
 # robots = ""
 
 disableImageOptimization = false
-disableImageOptimizationMD = false
+disableImageOptimizationMD = true
 disableTextInHeader = false
 # backgroundImageWidth = 1200
 
-# defaultBackgroundImage = "IMAGE.jpg" # used as default for background images 
+# defaultBackgroundImage = "IMAGE.jpg" # used as default for background images
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 # defaultSocialImage = "/android-chrome-512x512.png" # used as default for social media sharing (Open Graph and Twitter)
 
 # highlightCurrentMenuArea = true
-# smartTOC = true
+smartTOC = true
 # smartTOCHideUnfocusedChildren = true
 
 fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384", "sha256"
@@ -37,7 +37,7 @@ giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [header]
-  layout = "basic" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  layout = "fixed-gradient" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
   showMenu = true
@@ -65,9 +65,9 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showDateOnlyInArticle = false
   showDateUpdated = false
   showAuthor = true
-  # showAuthorBottom = false
-  showHero = false
-  # heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
+  showAuthorBottom = true
+  showHero = true
+  heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
@@ -80,7 +80,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showPagination = true
   invertPagination = false
   showReadingTime = true
-  showTableOfContents = false
+  showTableOfContents = true
   # showRelatedContent = false
   # relatedContentLimit = 3
   showTaxonomies = false # use showTaxonomies OR showCategoryOnly, not both
@@ -88,7 +88,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showAuthorsBadges = false
   showWordCount = true
   # sharingLinks = [ "linkedin", "twitter", "bluesky", "mastodon", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram", "line"]
-  showZenMode = false
+  showZenMode = true
 
 [list]
   showHero = false
