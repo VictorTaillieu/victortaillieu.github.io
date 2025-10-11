@@ -2,7 +2,7 @@ disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Blowfish"
+title = "Victor Taillieu"
 
 [params]
   displayName = "EN"
@@ -14,15 +14,15 @@ title = "Blowfish"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
-# [params.author]
-#   name = "Your name here"
-#   email = "youremail@example.com"
-#   image = "img/blowfish_logo.png"
+[params.author]
+  name = "Victor Taillieu"
+  email = "victor.taillieu@efrei.net"
+  image = "img/author.jpg"
 #   imageQuality = 96
-#   headline = "I'm only human"
+  headline = "Data Scientist & DevOps Engineer"
 #   bio = "A little bit about you"
-#   links = [
-#     { email = "mailto:hello@your_domain.com" },
+  links = [
+    { email = "mailto:victor.taillieu@efrei.net" },
 #     { link = "https://link-to-some-website.com/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
@@ -35,7 +35,7 @@ title = "Blowfish"
 #     { facebook = "https://facebook.com/username" },
 #     { flickr = "https://www.flickr.com/photos/username/" },
 #     { foursquare = "https://foursquare.com/username" },
-#     { github = "https://github.com/username" },
+    { github = "https://github.com/VictorTaillieu" },
 #     { gitlab = "https://gitlab.com/username" },
 #     { google = "https://www.google.com/" },
 #     { hashnode = "https://username.hashnode.dev" },
@@ -45,7 +45,7 @@ title = "Blowfish"
 #     { keyoxide = "https://keyoxide.org/URI" },
 #     { kickstarter = "https://www.kickstarter.com/profile/username" },
 #     { lastfm = "https://lastfm.com/user/username" },
-#     { linkedin = "https://linkedin.com/in/username" },
+    { linkedin = "https://linkedin.com/in/victor-taillieu" },
 #     { mastodon = "https://mastodon.instance/@username" },
 #     { matrix = "https://matrix.to/#/URI" },
 #     { medium = "https://medium.com/username" },
@@ -73,4 +73,4 @@ title = "Blowfish"
 #     { youtube = "https://youtube.com/username" },
 #     { ko-fi = "https://ko-fi.com/username" },
 #     { codeberg = "https://codeberg.org/username"},
-#   ]
+  ]
