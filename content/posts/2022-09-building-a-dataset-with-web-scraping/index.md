@@ -43,7 +43,7 @@ First, we locate the URL of the page to scrape by following these steps:
 
 As a result, the search prompt should look like this:
 
-![](/img/2022-09-building-a-dataset-with-web-scraping/kijiji-search.png "Kijiji search bar")
+![](kijiji-search.png "Kijiji search bar")
 
 After that the URL will be set to:
 
@@ -61,13 +61,13 @@ Later on, this will be useful in the script to navigate through the results page
 
 Now that we have the URLs of the desired content, we just need to locate the images in the code of the page. To do this, right-click on an ad image and click “Inspect”. The following sidebar will open:
 
-![](/img/2022-09-building-a-dataset-with-web-scraping/scraping-page-inspection.png "Browser inspection tool")
+![](scraping-page-inspection.png "Browser inspection tool")
 
 We have located an image link! You understand that doing this task manually to collect all the image links would be tedious. That is why web scraping uses scripts to automate this task.
 
 To localize the images formally, we have to find the “selector”. Right-click on the previous highlighted block and click “Copy > Copy selector”.
 
-![](/img/2022-09-building-a-dataset-with-web-scraping/selector-menu.png "Selector drop-down menu")
+![](selector-menu.png "Selector drop-down menu")
 
 You will end up with something like this in your clipboard:
 
@@ -151,7 +151,7 @@ df.to_csv("bike_brands_dataset_kijiji.csv", index=False)
 
 Let's see a few details about the implementation. You may notice the use of `.replace("200-jpg", "1600-jpg")` on the image link at line number 39. This is because Kijiji images are stored in different resolutions on their servers and we choose to take a higher one. On line 43, the selector `div.resultsHeadingContainer-781502691 > span` is used to get the number of results displayed up to the current page compared to the total number of results (it was obtained in the same way as above). A regex extracts those numbers on the next line. This allows us to know when we reach the last page.
 
-![](/img/2022-09-building-a-dataset-with-web-scraping/scraping-results-preview.png "Preview of the resulting data frame")
+![](scraping-results-preview.png "Preview of the resulting data frame")
 
 ### Download the images
 
@@ -187,7 +187,7 @@ df.progress_apply(download_image, axis=1)
 
 The script may take some time to run. In the end, you will get an `images` folder containing a folder for each brand! We can then analyze, clean, or preprocess the images. To collect even more data we can repeat this operation on other websites.
 
-![](/img/2022-09-building-a-dataset-with-web-scraping/sample-bike-images.png "Sample of the downloaded images")
+![](sample-bike-images.png "Sample of the downloaded images")
 
 ---
 
