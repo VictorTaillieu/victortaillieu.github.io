@@ -4,6 +4,9 @@ cardView: true
 orderByWeight : true
 cascade:
     showDate: false
-    showWordCount: false
+    showAuthor: false
     showReadingTime: false
+    showTableOfContents: false
+    showWordCount: false
+    showZenMode: false
 ---
