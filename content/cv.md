@@ -3,9 +3,7 @@ title: "CV"
 layout: "simple"
 ---
 
-<!-- [View pdf resume in french](/files/resume_fr.pdf)
 
-[View pdf resume in english](/files/resume_en.pdf) -->
 
 ## Work experience
 
@@ -18,7 +16,7 @@ layout: "simple"
 
 * **Developer in artificial intelligence (internship)**, [Decathlon](https://www.decathlon.com/) (Montreal, Canada), *May 2022 - November 2022*
   * Recognize product brands by deep learning (Python, TensorFlow)
-  <!-- * [Letter of recommendation](/files/reco_Decathlon.pdf) -->
+  * [Letter of recommendation](/documents/reco_Decathlon.pdf)
 
 * **Data storage engineer (internship)**, [Sencrop](https://sencrop.com/) (Lille, France), *April 2021 - August 2021*
   * Search for "big data" storage technologies (PostGIS, GeoWave)
@@ -36,7 +34,7 @@ layout: "simple"
 * **Master's degree in computer science**, [Université de Sherbrooke](https://www.usherbrooke.ca/about/) (Canada), *August 2021 - April 2022*
   * Double-degree
   * Artificial intelligence and data science program
-  <!-- * [Faculty of Science Graduate Honors List 2023](/files/TaillieuV_Lettre_recipiendaire_2023.pdf) -->
+  * [Faculty of Science Graduate Honors List 2023](/documents/TaillieuV_Lettre_recipiendaire_2023.pdf)
 * **Semester of study abroad**, [KAIST](https://www.kaist.ac.kr/en/) (Daejeon, South Korea), *August 2019 - December 2019*
   * Software engineering (Java, UML)
   * System programming (C, Linux)
