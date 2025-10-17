@@ -17,7 +17,7 @@ layout: "simple"
 
 {{< timelineItem md=true icon="list" header="Developer in artificial intelligence (internship)" badge="May 2022 - November 2022" subheader="[Decathlon](https://www.decathlon.com/) (Montreal, Canada)" >}}
   * Recognize product brands by deep learning (Python, TensorFlow)
-  * [Letter of recommendation](/documents/reco_Decathlon.pdf)
+  * [Letter of recommendation](reco_Decathlon.pdf)
 {{< /timelineItem >}}
 
 {{< timelineItem md=true icon="list" header="Data storage engineer (internship)" badge="April 2021 - August 2021" subheader="[Sencrop](https://sencrop.com/) (Lille, France)" >}}
@@ -44,7 +44,7 @@ layout: "simple"
 {{< timelineItem md=true icon="graduation-cap" header="Master's degree in computer science" badge="August 2021 - April 2022" subheader="[Université de Sherbrooke](https://www.usherbrooke.ca/about/) (Canada)" >}}
   * Double-degree
   * Artificial intelligence and data science program
-  * [Faculty of Science Graduate Honors List 2023](/documents/TaillieuV_Lettre_recipiendaire_2023.pdf)
+  * [Faculty of Science Graduate Honors List 2023](TaillieuV_Lettre_recipiendaire_2023.pdf)
 {{< /timelineItem >}}
 
 {{< timelineItem md=true icon="graduation-cap" header="Semester of study abroad" badge="August 2019 - December 2019" subheader="[KAIST](https://www.kaist.ac.kr/en/) (Daejeon, South Korea)" >}}
