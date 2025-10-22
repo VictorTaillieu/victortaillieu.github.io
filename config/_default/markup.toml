@@ -13,7 +13,9 @@
         inline = [['\(', '\)']]
 
 [highlight]
-  noClasses = false
+  linenos = true
+  lineNumbersInTable = false
+  style = 'nordic'
 
 [tableOfContents]
   startLevel = 2
