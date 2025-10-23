@@ -1,5 +1,6 @@
 ---
 title: "Building a dataset with web scraping"
+summary: "How to collect bike images from Kijiji ads using BeautifulSoup"
 date: 2022-09-01
 tags:
   - web scraping
