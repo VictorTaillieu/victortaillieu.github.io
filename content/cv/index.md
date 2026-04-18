@@ -7,8 +7,12 @@ layout: "simple"
 
 {{< timeline >}}
 
-{{< timelineItem md=true icon="list" header="Artificial intelligence and software support engineer for [Thales](https://www.thalesgroup.com/en)" badge="October 2023 - Today" subheader="[Alten](https://www.alten.com/) (Massy-Rungis, France)" >}}
-  * Develop a chatbot based on internal documentation (Python, RAG)
+{{< timelineItem md=true icon="list" header="Artificial intelligence engineer" badge="April 2026 - Today" subheader="[Athoria](https://athoria.fr/) (Paris, France)" >}}
+  * Develop RAG/MCP features as part of the internal AI assistant project (Python, AWS)
+{{< /timelineItem >}}
+
+{{< timelineItem md=true icon="list" header="Artificial intelligence and software support engineer for [Thales](https://www.thalesgroup.com/en)" badge="October 2023 - April 2026" subheader="[Alten](https://www.alten.com/) (Massy-Rungis, France)" >}}
+  * Prototype a chatbot based on internal documentation (Python, RAG)
   * Automate tasks to facilitate production (Python, Jenkins)
   * Maintain and support tools (Incredibuild, Opengrok)
   * Manage business VMs (Linux, Windows)
