@@ -1,7 +1,7 @@
 ---
 title: "Sudoku solver"
 summary: "Program to solve any sudoku with a Tkinter interface"
-weight: 2
+weight: 3
 ---
 
 ## Description

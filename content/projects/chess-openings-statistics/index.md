@@ -1,7 +1,7 @@
 ---
 title: "Chess openings statistics"
 summary: "Web app to explore chess openings statistics"
-weight: 1
+weight: 2
 ---
 
 ## Description
