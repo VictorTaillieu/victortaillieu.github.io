@@ -7,14 +7,13 @@ title = "Victor Taillieu"
   displayName = "EN"
   isoCode = "en"
   dateFormat = "2 January 2006"
+  description = "Victor Taillieu, AI Automation Engineer: projects, blog and CV."  # default meta description
 
 [params.author]
   name = "Victor Taillieu"
-  email = "victor.taillieu@efrei.net"
   image = "img/author.jpg"
-  headline = "AI Engineer"
+  headline = "AI Automation Engineer"
   links = [
-    { email = "mailto:victor.taillieu@efrei.net" },
     { github = "https://github.com/VictorTaillieu" },
     { linkedin = "https://linkedin.com/in/victor-taillieu" },
   ]

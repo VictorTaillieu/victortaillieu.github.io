@@ -5,6 +5,7 @@
 disableImageOptimizationMD = true
 smartTOC = true
 enableCodeCopy = true
+defaultSocialImage = "img/author.jpg"  # link preview image (LinkedIn…) for pages without a featured image
 
 [header]
   layout = "fixed-gradient"

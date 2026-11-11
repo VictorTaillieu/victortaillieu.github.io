@@ -7,11 +7,17 @@ layout: "simple"
 
 {{< timeline >}}
 
-{{< timelineItem md=true icon="list" header="Artificial intelligence engineer" badge="April 2026 - Today" subheader="[Athoria](https://athoria.fr/) (Paris, France)" >}}
+{{< timelineItem md=true icon="list" header="AI automation engineer" badge="September 2026 - Today" subheader="[Sekoia](https://www.sekoia.com/) (Paris, France)" >}}
+  * Deliver AI and automation projects with measurable impact for the whole company: 7 teams, ~200 users (Python, GCP, Dust, Apps Script, Claude Code)
+  * Identify user needs and design the right AI or automation solution
+  * Drive AI adoption as the internal AI referent: user support, best practices, technology watch
+{{< /timelineItem >}}
+
+{{< timelineItem md=true icon="list" header="AI engineer" badge="April 2026 - June 2026" subheader="[Athoria](https://www.athoria.fr/) (Paris, France)" >}}
   * Develop RAG/MCP features as part of the internal AI assistant project (Python, AWS)
 {{< /timelineItem >}}
 
-{{< timelineItem md=true icon="list" header="Artificial intelligence and software support engineer for [Thales](https://www.thalesgroup.com/en)" badge="October 2023 - April 2026" subheader="[Alten](https://www.alten.com/) (Massy-Rungis, France)" >}}
+{{< timelineItem md=true icon="list" header="AI and software support engineer for [Thales](https://www.thalesgroup.com/en)" badge="October 2023 - April 2026" subheader="[Alten](https://www.alten.com/) (Massy-Rungis, France)" >}}
   * Prototype a chatbot based on internal documentation (Python, RAG)
   * Automate tasks to facilitate production (Python, Jenkins)
   * Maintain and support tools (Incredibuild, Opengrok)
@@ -24,12 +30,12 @@ layout: "simple"
   * [Letter of recommendation](reco_Decathlon.pdf)
 {{< /timelineItem >}}
 
-{{< timelineItem md=true icon="list" header="Data storage engineer (internship)" badge="April 2021 - August 2021" subheader="[Sencrop](https://sencrop.com/) (Lille, France)" >}}
+{{< timelineItem md=true icon="list" header="Data storage engineer (internship)" badge="April 2021 - August 2021" subheader="[Sencrop](https://www.sencrop.com/) (Lille, France)" >}}
   * Search for "big data" storage technologies (PostGIS, GeoWave)
   * Cross geographical and vector data (Python, SQL)
 {{< /timelineItem >}}
 
-{{< timelineItem md=true icon="list" header="Project collaborator and quality assistant (internship)" badge="June 2018 - July 2018" subheader="[KWS](https://www.kws.com/) (Einbeck, Germany)" >}}
+{{< timelineItem md=true icon="list" header="Project collaborator and quality assistant (internship)" badge="June 2018 - July 2018" subheader="[KWS](https://www.kws.com/corp/en/) (Einbeck, Germany)" >}}
   * Develop a microservice for plant detection on images (Python, Flask, Gitlab)
   * Perform germination tests (seed quality)
 {{< /timelineItem >}}
@@ -88,7 +94,7 @@ layout: "simple"
 {{< /timelineItem >}}
 
 {{< timelineItem md=true icon="code" header="[Speech contest](https://rename.fr/2019/06/28/le-grand-discours-2019-16-finalistes/)" badge="March 2019 - June 2019" subheader="EFREI Paris" >}}
-  * Companies' favorite ([Agap2](https://www.agap2.fr/en/) and [Devoteam](https://www.devoteam.com/))
+  * Companies' favorite ([Agap2](https://www.agap2.fr/en) and [Devoteam](https://www.devoteam.com/))
   * Deliver a [speech](https://www.youtube.com/watch?v=lNkhualF4T0) in front of the promotion (ease in speaking)
 {{< /timelineItem >}}
 
