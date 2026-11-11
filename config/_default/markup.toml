@@ -1,17 +1,14 @@
-# -- Markup --
-# These settings are required for the theme to function.
-
+# Required by Blowfish (raw HTML in Markdown, math passthrough).
 [goldmark]
   [goldmark.renderer]
     unsafe = true
+  [goldmark.extensions.passthrough]
+    enable = true
+    [goldmark.extensions.passthrough.delimiters]
+      block = [['\[', '\]'], ['$$', '$$']]
+      inline = [['\(', '\)']]
 
-  [goldmark.extensions]
-    [goldmark.extensions.passthrough]
-      enable = true
-      [goldmark.extensions.passthrough.delimiters]
-        block = [['\[', '\]'], ['$$', '$$']]
-        inline = [['\(', '\)']]
-
+# Code blocks: inline styles with the "nordic" palette and line numbers.
 [highlight]
   linenos = true
   lineNumbersInTable = false

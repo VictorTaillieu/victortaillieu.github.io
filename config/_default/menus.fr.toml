@@ -1,0 +1,16 @@
+# Main menu (header) for the French version. Ordered by weight.
+
+[[main]]
+  name = "Projets"
+  pageRef = "projects"
+  weight = 10
+
+[[main]]
+  name = "Blog"
+  pageRef = "posts"
+  weight = 20
+
+[[main]]
+  name = "CV"
+  pageRef = "cv"
+  weight = 30
