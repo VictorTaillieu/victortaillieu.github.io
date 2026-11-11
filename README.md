@@ -58,8 +58,7 @@ The theme is downloaded automatically on the first run (cached in `~/.cache/hugo
 ├── layouts/shortcodes/    # Overrides of theme templates (timelineItem)
 ├── static/                # Files copied as-is to the site root (favicons, manifest)
 ├── go.mod / go.sum        # Pinned theme version
-├── .github/               # CI: deploy (gh-pages.yml), theme updates (update-theme.yml), link check (check-links.yml), Dependabot
-└── .lycheeignore          # Links ignored by the link checker
+└── .github/               # CI: deploy (gh-pages.yml), theme updates (update-theme.yml), link check (check-links.yml), Dependabot
 ```
 
 Content conventions:
@@ -134,10 +133,10 @@ Install [lychee](https://github.com/lycheeverse/lychee/releases) (prebuilt binar
 
 ```bash
 hugo --gc --minify --cleanDestinationDir      # fresh build, without stale files in public/
-lychee --exclude-loopback --root-dir "$PWD/public" public
+lychee --exclude-loopback --accept 100..=103,200..=299,403,429 --root-dir "$PWD/public" public
 ```
 
-Sites that block bots (403 although the page works in a browser) are listed in [`.lycheeignore`](.lycheeignore).
+`403` and `429` answers are accepted: they come from sites blocking bots, not dead pages.
 
 ### Theme overrides
 

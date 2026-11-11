@@ -1,4 +1,0 @@
-# Links ignored by lychee (link checker), one regex per line.
-# Only add sites that block bots but work in a browser.
-^https://www\.devoteam\.com
-^https://github\.com/signup

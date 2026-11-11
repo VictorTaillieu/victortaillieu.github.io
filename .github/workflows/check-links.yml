@@ -2,7 +2,7 @@ name: Check links
 
 # Builds the site and checks every internal and external link with lychee.
 # Broken links → an issue labelled "broken-links" is opened (or updated if one is already open).
-# False positives (sites blocking bots) go in .lycheeignore.
+# 403/429 answers (sites blocking bots) are accepted, not reported as broken.
 
 on:
   schedule:
@@ -45,7 +45,13 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --exclude-loopback --root-dir ${{ github.workspace }}/public public
+          # 403/429 = site blocking bots or rate limiting (common from CI servers), not a dead link
+          args: >-
+            --no-progress
+            --exclude-loopback
+            --accept 100..=103,200..=299,403,429
+            --root-dir ${{ github.workspace }}/public
+            public
           fail: false
 
       - name: Find open broken-links issue
