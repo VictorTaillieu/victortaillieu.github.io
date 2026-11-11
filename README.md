@@ -58,7 +58,7 @@ The theme is downloaded automatically on the first run (cached in `~/.cache/hugo
 ├── layouts/shortcodes/    # Overrides of theme templates (timelineItem)
 ├── static/                # Files copied as-is to the site root (favicons, manifest)
 ├── go.mod / go.sum        # Pinned theme version
-└── .github/workflows/     # Build & deploy to GitHub Pages
+└── .github/               # CI: deploy (gh-pages.yml), theme updates (update-theme.yml), Dependabot
 ```
 
 Content conventions:
@@ -86,11 +86,26 @@ Once enough content is translated, set `disabled = false` in `config/_default/la
 
 Push to `master`: the [workflow](.github/workflows/gh-pages.yml) builds the site with `hugo --gc --minify` and deploys it to GitHub Pages. It can also be run manually from the Actions tab (*Run workflow*).
 
+On pull requests, the same workflow only builds the site (no deployment), to check that the change doesn't break it.
+
 If the build fails, the previous version stays online. Check the run logs in the **Actions** tab.
 
 ## Maintenance
 
-### Update the theme
+### Automated updates
+
+| What | How | When |
+|---|---|---|
+| GitHub Actions | [Dependabot](.github/dependabot.yml) opens one grouped PR | monthly |
+| Blowfish theme | [update-theme workflow](.github/workflows/update-theme.yml) runs `hugo mod get -u`, test-builds the site and opens a PR (as **draft** if the build fails or has warnings, e.g. Hugo version out of the theme's range) | 1st of each month, or manually from the Actions tab |
+
+Review and merge these PRs; nothing is deployed until they are merged.
+
+> The theme workflow needs *Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests* to be enabled.
+>
+> Dependabot can't be used for the theme: its `go mod tidy` removes the Hugo Module from `go.mod`.
+
+### Update the theme manually
 
 ```bash
 hugo mod get -u github.com/nunocoracao/blowfish/v3   # latest v3.x release
@@ -109,7 +124,7 @@ A new **major** version (`v4`) requires changing the import path in `config/_def
 
 1. Pick a version within the theme's supported range.
 2. Install it locally (see [Requirements](#requirements)).
-3. Update `hugo-version` in `.github/workflows/gh-pages.yml` **and** the version in this README.
+3. Update `HUGO_VERSION` in `.github/workflows/gh-pages.yml` **and** `.github/workflows/update-theme.yml`, and the version in this README.
 
 ### Theme overrides
 

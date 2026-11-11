@@ -1,25 +1,18 @@
 name: Deploy Hugo to GitHub Pages
 
 on:
-  # Trigger on push to the master branch
+  # Build and deploy on push to master
   push:
     branches:
       - master
+  # Build only (no deploy) on pull requests, e.g. Dependabot updates
+  pull_request:
   # Allow manual triggering
   workflow_dispatch:
 
-# Set permissions for the GitHub token
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+env:
+  HUGO_VERSION: "0.167.0" # keep in sync with update-theme.yml and README.md
 
-# Ensure only one deployment job runs at a time
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
-# Set default shell to bash
 defaults:
   run:
     shell: bash
@@ -27,6 +20,8 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -40,23 +35,32 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.167.0"
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
       - name: Build site
-        run: hugo --minify
+        run: hugo --gc --minify
 
       - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
   deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    # Only one deployment at a time; a running deployment is never cancelled
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-24.04
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

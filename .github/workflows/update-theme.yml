@@ -1,0 +1,102 @@
+name: Update Blowfish theme
+
+# Dependabot can't update Hugo Modules (its `go mod tidy` drops the theme, since no Go code imports it),
+# so this workflow does it: `hugo mod get -u`, test build, then a pull request with the result.
+
+on:
+  schedule:
+    - cron: "0 6 1 * *" # 1st of each month, 06:00 UTC
+  workflow_dispatch:
+
+env:
+  HUGO_VERSION: "0.167.0" # keep in sync with gh-pages.yml and README.md
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Go
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          cache: false
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Update theme to latest v3 release
+        id: update
+        run: |
+          old=$(grep -oE 'blowfish/v3 v[^ ]+' go.mod | cut -d' ' -f2)
+          hugo mod get -u github.com/nunocoracao/blowfish/v3
+          hugo mod tidy
+          new=$(grep -oE 'blowfish/v3 v[^ ]+' go.mod | cut -d' ' -f2)
+          echo "old=$old" >> "$GITHUB_OUTPUT"
+          echo "new=$new" >> "$GITHUB_OUTPUT"
+
+      - name: Test build
+        id: build
+        if: steps.update.outputs.old != steps.update.outputs.new
+        run: |
+          set +e
+          hugo --gc --minify > "$RUNNER_TEMP/build.log" 2>&1
+          status=$?
+          cat "$RUNNER_TEMP/build.log"
+          if [ $status -eq 0 ] && ! grep -qE '^(WARN|ERROR)' "$RUNNER_TEMP/build.log"; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          # Hugo versions supported by the new theme release
+          dir=$(hugo config mounts | grep -m1 -o '"dir": "[^"]*blowfish[^"]*"' | cut -d'"' -f4)
+          min=$(grep -m1 '^min' "$dir/config.toml" | cut -d'"' -f2)
+          max=$(grep -m1 '^max' "$dir/config.toml" | cut -d'"' -f2)
+
+          {
+            echo "Blowfish \`${{ steps.update.outputs.old }}\` → \`${{ steps.update.outputs.new }}\`"
+            echo
+            echo "- Release notes: https://github.com/nunocoracao/blowfish/releases"
+            echo "- Hugo supported by this release: \`$min\` → \`$max\` (CI uses \`$HUGO_VERSION\`)"
+            if [ $status -eq 0 ] && ! grep -qE '^(WARN|ERROR)' "$RUNNER_TEMP/build.log"; then
+              echo "- Test build: ✅ no warning"
+            else
+              echo "- Test build: ⚠️ failed or has warnings, see below (PR opened as draft)"
+            fi
+            echo
+            echo "Before merging: check the site locally (\`git fetch && git switch update-theme && hugo server\`)."
+            echo
+            echo "<details><summary>Build log</summary>"
+            echo
+            echo '```'
+            tail -n 40 "$RUNNER_TEMP/build.log"
+            echo '```'
+            echo "</details>"
+          } > "$RUNNER_TEMP/body.md"
+
+      - name: Open pull request
+        if: steps.update.outputs.old != steps.update.outputs.new
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: update-theme
+          delete-branch: true
+          add-paths: |
+            go.mod
+            go.sum
+          commit-message: Update Blowfish theme to ${{ steps.update.outputs.new }}
+          title: Update Blowfish theme to ${{ steps.update.outputs.new }}
+          body-path: ${{ runner.temp }}/body.md
+          draft: ${{ steps.build.outputs.ok != 'true' }}
