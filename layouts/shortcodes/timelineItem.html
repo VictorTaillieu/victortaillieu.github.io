@@ -1,3 +1,10 @@
+{{- /*
+  Override of Blowfish's timelineItem shortcode (theme v3.9.0), used by content/cv/.
+  Differences with the theme version:
+    - header and subheader are rendered as Markdown (links to companies/schools)
+    - header is an <h3> instead of an <h2> (entries sit under the "##" sections of the CV)
+  After a theme update, compare with the theme's layouts/shortcodes/timelineItem.html.
+*/ -}}
 {{ $icon := .Get "icon" | default "check" }}
 {{ $md := .Get "md" | default false }}
 {{ $header := .Get "header" }}
