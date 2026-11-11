@@ -58,7 +58,8 @@ The theme is downloaded automatically on the first run (cached in `~/.cache/hugo
 ├── layouts/shortcodes/    # Overrides of theme templates (timelineItem)
 ├── static/                # Files copied as-is to the site root (favicons, manifest)
 ├── go.mod / go.sum        # Pinned theme version
-└── .github/               # CI: deploy (gh-pages.yml), theme updates (update-theme.yml), Dependabot
+├── .github/               # CI: deploy (gh-pages.yml), theme updates (update-theme.yml), link check (check-links.yml), Dependabot
+└── .lycheeignore          # Links ignored by the link checker
 ```
 
 Content conventions:
@@ -98,6 +99,7 @@ If the build fails, the previous version stays online. Check the run logs in the
 |---|---|---|
 | GitHub Actions | [Dependabot](.github/dependabot.yml) opens one grouped PR | monthly |
 | Blowfish theme | [update-theme workflow](.github/workflows/update-theme.yml) runs `hugo mod get -u`, test-builds the site and opens a PR (as **draft** if the build fails or has warnings, e.g. Hugo version out of the theme's range) | 1st of each month, or manually from the Actions tab |
+| Broken links | [check-links workflow](.github/workflows/check-links.yml) builds the site, checks all links with [lychee](https://github.com/lycheeverse/lychee) and opens (or updates) an issue labelled `broken-links` if some are dead | 15th of each month, or manually from the Actions tab |
 
 Review and merge these PRs; nothing is deployed until they are merged.
 
@@ -124,7 +126,18 @@ A new **major** version (`v4`) requires changing the import path in `config/_def
 
 1. Pick a version within the theme's supported range.
 2. Install it locally (see [Requirements](#requirements)).
-3. Update `HUGO_VERSION` in `.github/workflows/gh-pages.yml` **and** `.github/workflows/update-theme.yml`, and the version in this README.
+3. Update `HUGO_VERSION` in the three workflows (`gh-pages.yml`, `update-theme.yml`, `check-links.yml`) and the version in this README.
+
+### Check links locally
+
+Install [lychee](https://github.com/lycheeverse/lychee/releases) (prebuilt binary, or `cargo install lychee`), then:
+
+```bash
+hugo --gc --minify --cleanDestinationDir      # fresh build, without stale files in public/
+lychee --exclude-loopback --root-dir "$PWD/public" public
+```
+
+Sites that block bots (403 although the page works in a browser) are listed in [`.lycheeignore`](.lycheeignore).
 
 ### Theme overrides
 

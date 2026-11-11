@@ -1,0 +1,67 @@
+name: Check links
+
+# Builds the site and checks every internal and external link with lychee.
+# Broken links → an issue labelled "broken-links" is opened (or updated if one is already open).
+# False positives (sites blocking bots) go in .lycheeignore.
+
+on:
+  schedule:
+    - cron: "0 6 15 * *" # 15th of each month, 06:00 UTC
+  workflow_dispatch:
+
+env:
+  HUGO_VERSION: "0.167.0" # keep in sync with gh-pages.yml, update-theme.yml and README.md
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Go
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          cache: false
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Build site
+        run: hugo --gc --minify
+
+      - name: Check links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --exclude-loopback --root-dir ${{ github.workspace }}/public public
+          fail: false
+
+      - name: Find open broken-links issue
+        id: issue
+        if: steps.lychee.outputs.exit_code != 0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          number=$(gh issue list --repo "$GITHUB_REPOSITORY" --label broken-links --state open --json number --jq '.[0].number' || true)
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update issue
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v6
+        with:
+          title: Broken links found
+          content-filepath: ./lychee/out.md
+          labels: broken-links
+          issue-number: ${{ steps.issue.outputs.number }}

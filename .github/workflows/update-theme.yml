@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  HUGO_VERSION: "0.167.0" # keep in sync with gh-pages.yml and README.md
+  HUGO_VERSION: "0.167.0" # keep in sync with gh-pages.yml, check-links.yml and README.md
 
 defaults:
   run:
